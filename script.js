@@ -7,6 +7,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
+    // New Attribute/Button
     $('.wash-button').click(clickedWashButton);
   
     // When image is hovered over, it will "call" function for hovering and leaving hover (functions are below)
@@ -18,6 +19,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
     var pet_info = {name:"Waddles", weight:8, happiness:10, hygiene: 75};
+
+    // variable to keep track of pet comments
     var mood = "Hi I'm Waddles!";
 
     // function Pet(name, weight, happiness, hygiene) {
@@ -37,6 +40,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       
     // }
 
+    // Function to change mood text
     function updateMood(text) {
       mood = text;
     }
@@ -95,10 +99,12 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         pet_info.weight = 0;
       }
       
+      // Conditional for happiness
       if (pet_info.happiness < 0) {
         pet_info.happiness = 0;
       }
 
+      // Conditional for hygiene
       if (pet_info.hygiene < 0) {
         pet_info.hygiene = 0;
       }else if (pet_info.hygiene > 100) {
@@ -108,8 +114,12 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       updatePetImage();
     }
 
+
+    // Function to change pet image
     function updatePetImage() {
+      // If weight is a certain amount first
       if(pet_info.weight >= 35){
+        // Choose different "muddiness" depending on hygiene
         if (pet_info.hygiene >= 55) {
           $('.pet-image').attr('src', 'images/gigapig_big_br.png');
         }else if (pet_info.hygiene >= 25) {
@@ -118,6 +128,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
           $('.pet-image').attr('src', 'images/gigapig_bigd2_br.png');
         }
       }else if (pet_info.weight >= 4) {
+        // Choose different "muddiness" depending on hygiene
         if (pet_info.hygiene >= 55) {
           $('.pet-image').attr('src', 'images/gigapig_normc_br.png');
         }else if (pet_info.hygiene >= 25) {
@@ -126,7 +137,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
           $('.pet-image').attr('src', 'images/gigapig_normd2_br.png');
         }
       }else{
-
+        // Choose different "muddiness" depending on hygiene
         if (pet_info.hygiene >= 55) {
           $('.pet-image').attr('src', 'images/gigapig_skinc_br.png');
         }else if (pet_info.hygiene >= 25) {
@@ -139,24 +150,30 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     
     // Updates your HTML with the current values in your pet_info object
     function updatePetInfoInHtml() {
+      // GET MOOD (PET COMMENT) TO SHOW "SLOWLY"
       $('.mood').fadeIn('1000');
       $('.mood').text(mood);
       $('.name').text(pet_info['name']);
       $('.weight').text(pet_info['weight']);
       $('.happiness').text(pet_info['happiness']);
       $('.hygiene').text(pet_info['hygiene']);
+      
+      // DONT FADE OUT IF IT IS ONE OF THE 2 STATIC COMMENTS
       if(mood!="Hi I'm Waddles!" && mood!="Hello There!"){     
-        
+        // PREVENT FADES TO QUEUE UP
         $('.mood').finish();
+        // FADE OUT
         $('.mood').fadeOut('10000');
       }
     }
 
+    // Updates the pet comment when hovering
     function hoveringPet() {
       updateMood("Hello There!");
       checkAndUpdatePetInfoInHtml();
     }
 
+    // Updates the pet comment when leaving the image being hovered
     function leaveHoverPet() {
       updateMood("...");
       checkAndUpdatePetInfoInHtml();
