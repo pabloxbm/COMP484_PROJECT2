@@ -9,8 +9,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.exercise-button').click(clickedExerciseButton);
     $('.wash-button').click(clickedWashButton);
   
+    // When image is hovered over, it will "call" function for hovering and leaving hover (functions are below)
     $('.pet-image').mouseover(hoveringPet);
-    
     $('.pet-image').mouseout(leaveHoverPet);
   
     
@@ -20,22 +20,22 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     var pet_info = {name:"Waddles", weight:8, happiness:10, hygiene: 75};
     var mood = "Hi I'm Waddles!";
 
-    function Pet(name, weight, happiness, hygiene) {
-      this.name = name;
-      this.weight = weight;
-      this.happiness = happiness;
-      this.hygiene = hygiene;
-      setWeight = function(weight) {
-        this.weight = weight;
-      }
-      setHappiness = function(happiness) {
-        this.happiness = happiness;
-      }
-      setHygiene = function(hygiene) {
-        this.hygiene = hygiene;
-      }
+    // function Pet(name, weight, happiness, hygiene) {
+    //   this.name = name;
+    //   this.weight = weight;
+    //   this.happiness = happiness;
+    //   this.hygiene = hygiene;
+    //   setWeight = function(weight) {
+    //     this.weight = weight;
+    //   }
+    //   setHappiness = function(happiness) {
+    //     this.happiness = happiness;
+    //   }
+    //   setHygiene = function(hygiene) {
+    //     this.hygiene = hygiene;
+    //   }
       
-    }
+    // }
 
     function updateMood(text) {
       mood = text;
