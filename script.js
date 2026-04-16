@@ -11,7 +11,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.wash-button').click(clickedWashButton);
   
     // When image is hovered over, it will "call" function for hovering and leaving hover (functions are below)
+    // the mouseover() method is used here to detect when the user hovers over the pet image and update the mood (pet comment) accordingly
     $('.pet-image').mouseover(hoveringPet);
+    // the .mouseout() method is used here to detect when the user stops hovering over the pet image (leaves the pet image with the cursor) and update the mood accordingly
     $('.pet-image').mouseout(leaveHoverPet);
   
     
@@ -161,9 +163,11 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // DONT FADE OUT IF IT IS ONE OF THE 2 STATIC COMMENTS
       if(mood!="Hi I'm Waddles!" && mood!="Hello There!"){     
         // PREVENT FADES TO QUEUE UP
+        /* the .finish() method is used here to stop the bug where the fadeout animations conintue for the amount of times a button is pressed 
+        (stop bug that occurs when spamming a button). It works by stopping/removing all animations in the queue */
         $('.mood').finish();
         // FADE OUT
-        $('.mood').fadeOut('10000');
+        $('.mood').fadeOut(750);
       }
     }
 
