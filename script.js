@@ -109,7 +109,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
 
     function updatePetImage() {
-      if(pet_info.weight >= 50){
+      if(pet_info.weight >= 35){
         if (pet_info.hygiene >= 55) {
           $('.pet-image').attr('src', '/images/gigapig_big_br.png');
         }else if (pet_info.hygiene >= 25) {
