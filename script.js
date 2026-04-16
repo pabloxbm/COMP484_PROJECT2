@@ -111,28 +111,28 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function updatePetImage() {
       if(pet_info.weight >= 35){
         if (pet_info.hygiene >= 55) {
-          $('.pet-image').attr('src', '/images/gigapig_big_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_big_br.png');
         }else if (pet_info.hygiene >= 25) {
-          $('.pet-image').attr('src', '/images/gigapig_bigd1_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_bigd1_br.png');
         }else {
-          $('.pet-image').attr('src', '/images/gigapig_bigd2_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_bigd2_br.png');
         }
       }else if (pet_info.weight >= 4) {
         if (pet_info.hygiene >= 55) {
-          $('.pet-image').attr('src', '/images/gigapig_normc_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_normc_br.png');
         }else if (pet_info.hygiene >= 25) {
-          $('.pet-image').attr('src', '/images/gigapig_normd1_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_normd1_br.png');
         }else {
-          $('.pet-image').attr('src', '/images/gigapig_normd2_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_normd2_br.png');
         }
       }else{
 
         if (pet_info.hygiene >= 55) {
-          $('.pet-image').attr('src', '/images/gigapig_skinc_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_skinc_br.png');
         }else if (pet_info.hygiene >= 25) {
-          $('.pet-image').attr('src', '/images/gigapig_skind1_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_skind1_br.png');
         }else {
-          $('.pet-image').attr('src', '/images/gigapig_skind2_br.png');
+          $('.pet-image').attr('src', 'images/gigapig_skind2_br.png');
         }
       }
     }
