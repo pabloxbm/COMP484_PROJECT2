@@ -67,6 +67,7 @@
     background-position: center;
     background-size: cover;
     border-radius: 13px;
+    /* transform: rotate(0deg); */
   }
   
   .dashboard div {

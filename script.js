@@ -47,6 +47,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       mood = text;
     }
     function clickedTreatButton() {
+      $('.pet-image').finish();
+      $('.pet-image').animate({height: ["200px","linear"]}, 100);
+      $('.pet-image').animate({height: ["350px","linear"]}, 100);
       // Increase pet happiness
       pet_info.happiness += 3;
       // Increase pet weight
@@ -58,6 +61,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
     
     function clickedPlayButton() {
+      $('.pet-image').finish();
+      $('.pet-image').animate({width: ["200px","linear"]}, 100);
+      $('.pet-image').animate({width: ["400px","linear"]}, 100);
       // Increase pet happiness
       pet_info.happiness += 2;
       // Decrease pet weight
@@ -69,6 +75,11 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
     
     function clickedExerciseButton() {
+      $('.pet-image').finish();
+      $('.pet-image').animate({width: ["200px","linear"]}, 100);
+      $('.pet-image').animate({width: ["400px","linear"]}, 100);
+      $('.pet-image').animate({width: ["200px","linear"]}, 100);
+      $('.pet-image').animate({width: ["400px","linear"]}, 100);
       // Decrease pet happiness
       pet_info.happiness -= 3;
       // Decrease pet weight
@@ -81,6 +92,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     
     function clickedWashButton() {
+      $('.pet-image').finish();
+      $('.pet-image').animate({height: ["toggle", "swing"]}, 100);
+      $('.pet-image').animate({height: ["toggle", "swing"]}, 100);
       // Decrease pet happiness
       pet_info.happiness -= 5;
       // reset pet hygiene
